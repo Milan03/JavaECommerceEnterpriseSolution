@@ -1,0 +1,1 @@
+angular.module('case2', ['ngRoute', 'ui.bootstrap']);

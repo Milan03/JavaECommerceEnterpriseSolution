@@ -1,0 +1,35 @@
+<!--
+    File:           products.html
+    Author:         Milan Sobat
+    Last Updated:   October 16, 2014
+    Purpose:        Partial HTML for CRUD operations of products.
+-->
+
+
+<div class="container" ng-controller="ProductCtrl">
+    <div class="text-center">
+        <h2 class="pageheader">Products</h2>
+    </div>
+    <div class="text-center alert-box notice"><span>{{status}}</span></div>
+    <table class="table table-bordered">
+        <thead class="header">
+            <tr>
+                <th colspan="1" rowspan="1">Product Code</th>
+                <th colspan="1" rowspan="1">Name</th>
+                <th colspan="1" rowspan="1">Vendor No</th>
+                <th colspan="1" rowspan="1">MSRP</th>
+            </tr>
+            <tr ng-click="selectRow(-1, null)">
+                <td align="center" colspan="4">-- Click to add new product, otherwise choose product to view --</td>
+            </tr>
+        </thead>
+        <tbody ng-repeat="product in products" class="{ itemSelected: $index === selectedRow }" ng-click="selectRow($index, product)">
+            <tr id="prod{{product.productcode}}">
+                    <td align="left" style="padding-right: 15px">{{product.productcode}}</td>
+                    <td align="left">{{product.productname}}</td>
+                    <td align="left">{{product.vendorno}}</td>
+                    <td align="left">{{product.msrp}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

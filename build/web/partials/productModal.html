@@ -1,0 +1,163 @@
+<!--
+    File:           productModal.html
+    Author:         Milan Sobat
+    Last Updated:   October 16, 2014
+    Purpose:        HTML for adding/updating products.
+-->
+
+
+<div class="col-xs-12 text-center">
+   <form name="productForm" novalidate>
+      <div class="panel panel-primary">
+         <div class="panel-heading xsmall">
+            <h4 class="modal-title" ng-hide="todo === 'add'">Product: {{product.productcode}}</h4>
+            <h4 class="modal-title" ng-hide="todo === 'update'">Add New Product</h4> 
+         </div>
+          <div class="panel">
+              <div class="panel-body">
+              <div class="panel-heading-small text-left">
+                  Product Information
+                  <button class="btn-primary pull-right" ng-click="isCollapsed = !isCollapsed;">
+                      <span ng-show="isCollapsed" class="glyphicon glyphicon-plus"></span>
+                      <span ng-show="!isCollapsed" class="glyphicon glyphicon-minus"></span>
+                  </button>
+              </div>
+              <div class="panel-body xsmall text-left" ng-class="{true: 'collapse'}[isCollapsed]">
+              <!--PRODUCT CODE -->
+                  <div class="form-group">
+                     <label>Code</label>
+                     <input type="text" ng-model="product.productcode" name="productcode" required />
+                     <div class="custom-error"  ng-show="productForm.productcode.$pristine || 
+                                                         productForm.productcode.$invalid">
+                          <span ng-show="productForm.productcode.$error.required">Code is required</span>
+                     </div>
+                  </div>
+<!--                  <my-reqfield type="txt" label="Code" size="10" max="5" ng-model="product.productcode"></my-reqfield>-->
+                  <!-- VENDOR NO -->
+                  <div class="form-group">
+                     <label>Vendor No</label>
+                     <select name="productvendorno" ng-model="product.vendorno"
+                             ng-options="v.vendorno as v.vendorno for v in vendors">
+                     </select>
+                  </div>
+                  <!-- SKU -->
+                  <div class="form-group">
+                     <label>SKU</label>
+                     <input type="text" ng-model="product.vendorsku" name="productsku" required />
+                     <div class="custom-error"  ng-show="productForm.vendorsku.$pristine || 
+                                                         productForm.vendorsku.$invalid">
+                          <span ng-show="productForm.vendorsku.$error.required">SKU is required</span>
+                     </div>
+                  </div>
+                  <!-- NAME -->                  
+                  <div class="form-group">
+                     <label>Name</label>
+                     <input type="text" ng-model="product.productname" name="productname" required />
+                     <div class="custom-error"  ng-show="productForm.productname.$pristine || 
+                                                         productForm.productname.$invalid">
+                          <span ng-show="productForm.productname.$error.required">Name is required</span>
+                     </div>
+                  </div>
+                  <!-- COST -->                  
+                  <div class="form-group">
+                     <label>Cost</label>
+                     <input class="text-right" type="text" ng-model="product.costprice" name="productcostprice"  ng-pattern="/^\d*\.?\d*$/" required />
+                     <div class="custom-error"  ng-show="productForm.productcostprice.$pristine || 
+                                                         productForm.productcostprice.$invalid">
+                          <span ng-show="productForm.productcostprice.$error.required">Costprice is required</span>
+                          <span ng-show="productForm.productcostprice.$error.pattern">Decimal number only</span>
+                     </div>
+                  </div>
+                  <!-- MSRP -->                  
+                  <div class="form-group">
+                     <label>MSRP</label>
+                     <input class="text-right" type="text" ng-model="product.msrp" name="productmsrp"  ng-pattern="/^\d*\.?\d*$/" required />
+                     <div class="custom-error"  ng-show="productForm.productmsrp.$pristine || 
+                                                         productForm.productmsrp.$invalid">
+                          <span ng-show="productForm.productmsrp.$error.required">Costprice is required</span>
+                          <span ng-show="productForm.productcostprice.$error.pattern">Decimal number only</span>
+                     </div>
+                  </div>
+              </div> <!-- PRODUCT INFORMATION -->
+              </div>
+              <div class="panel-body">
+                <div class="panel-heading-small text-left">
+                    Inventory Information
+                    <button class="btn-primary pull-right" ng-click="isCollapsed2 = !isCollapsed2;">
+                        <span ng-show="isCollapsed2" class="glyphicon glyphicon-plus"></span>
+                        <span ng-show="!isCollapsed2" class="glyphicon glyphicon-minus"></span>
+                    </button>
+                </div>
+                <div class="panel-body xsmall text-left" ng-class="{true: 'collapse'}[isCollapsed2]">
+                    <!-- ROP -->                  
+                    <div class="form-group">
+                       <label>RoP</label>
+                       <input type="text" ng-model="product.rop" name="productrop"  ng-pattern="/^(\d)+$/" required />
+                       <div class="custom-error"  ng-show="productForm.productrop.$pristine || 
+                                                           productForm.productrop.$invalid">
+                            <span ng-show="productForm.productrop.$error.required">RoP is required</span>
+                            <span ng-show="productForm.productrop.$error.pattern">Digits only</span>
+                       </div>
+                    </div>    
+                    <!-- EOQ -->                  
+                    <div class="form-group">
+                       <label>EoQ</label>
+                       <input type="text" ng-model="product.eoq" name="producteoq"  ng-pattern="/^(\d)+$/" required />
+                       <div class="custom-error"  ng-show="productForm.producteoq.$pristine || 
+                                                           productForm.producteoq.$invalid">
+                            <span ng-show="productForm.producteoq.$error.required">EoQ is required</span>
+                            <span ng-show="productForm.producteoq.$error.pattern">Digits only</span>
+                       </div>
+                    </div>
+                    <!-- QOH -->                  
+                    <div class="form-group">
+                       <label>QoH</label>
+                       <input type="text" ng-model="product.qoh" name="productqoh"  ng-pattern="/^(\d)+$/" required />
+                       <div class="custom-error"  ng-show="productForm.productqoh.$pristine || 
+                                                           productForm.productqoh.$invalid">
+                            <span ng-show="productForm.productqoh.$error.required">QoH is required</span>
+                            <span ng-show="productForm.productqoh.$error.pattern">Digits only</span>
+                       </div>
+                    </div>
+                    <!-- QOO -->                  
+                    <div class="form-group">
+                       <label>QoO</label>
+                       <input type="text" ng-model="product.qoo" name="productqoo"  ng-pattern="/^(\d)+$/" required />
+                       <div class="custom-error"  ng-show="productForm.productqoo.$pristine || 
+                                                           productForm.productqoo.$invalid">
+                            <span ng-show="productForm.productqoo.$error.required">ROP is required</span>
+                            <span ng-show="productForm.productqoo.$error.pattern">Digits only</span>
+                       </div>
+                    </div>
+                </div>
+                <div class="panel-heading-small text-left">
+                  QRCode
+                  <button class="btn-primary pull-right" ng-click="isCollapsed3 = !isCollapsed3;">
+                      <span ng-show="isCollapsed3" class="glyphicon glyphicon-plus"></span>
+                      <span ng-show="!isCollapsed3" class="glyphicon glyphicon-minus"></span>
+                  </button>
+              </div>
+                <div class="panel-body xsmall text-left" ng-class="{true: 'collapse'}[isCollapsed3]">
+                    <div class="form-group">
+                        <label>QRC Text</label>
+                        <input type="text" name="qrctxt" ng-model="product.qrcodetxt">
+                    </div>
+                    <div class="form-group">
+                        <label>QR Code</label>
+                        <img alt="qrcode" ng-src="QRCode?qrc={{product.productcode}}" />
+                    </div>
+                </div>
+              </div>
+          </div>
+          <div class="panel-footer text-primary xsmall">      
+                <button class="btn btn-primary" ng-click="(todo==='add') ? addProduct() : updateProduct()"
+                                                ng-disabled="productForm.$invalid">{{todo}}</button>
+                <button class="btn btn-primary" ng-click="closeModal()">cancel</button>
+                <div ng-hide="todo==='add'">
+                    <button type="button" class="btn btn-primary" ng-click="deleteProduct()" confirm-click>delete</button>
+                </div>
+                <div>{{status}}</div>
+          </div>  
+      </div>
+   </form>
+</div>

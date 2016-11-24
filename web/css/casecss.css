@@ -1,0 +1,91 @@
+/* 
+    Created on : Oct 23, 2013, 5:46:26 PM
+    Author     : Milan Sobat
+    Miscellaneous styles supporting case 1
+*/
+
+.alert-box {
+    color:#555;
+    width: 480px;
+    border-radius:10px;
+    font-family:Tahoma,Geneva,Arial,sans-serif;font-size:11px;
+    padding:10px 10px 10px 36px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 7px;
+}
+
+.alert-box span {
+    font-weight:bold;
+    text-transform:uppercase;
+}
+
+.notice {
+    background:#e3f7fc url('images/notice.png') no-repeat 10px 50%;
+    border:1px solid #8ed9f6;
+}
+
+.error {
+    background:#ffecec url('img/error.png') no-repeat 10px 50%;
+    border:1px solid #f5aca6;
+}
+.success {
+    background:#e9ffd9 url('img/success.png') no-repeat 10px 50%;
+    border:1px solid #a6ca8a;
+}
+
+.hide-option {
+    display: none;
+}
+
+.custom-error {
+    font-size: x-small; 
+    font-weight: bold; 
+    color: red;
+}
+
+.generator-body #product-select {
+    width: 9em;
+}
+
+.generator-body #product-label, .generator-body #quantity-label {
+    margin-left: 3em;
+}
+
+.generator-body #vendor-select {
+    width: 3em;
+}
+
+.left {
+    width: 70px;
+    float: left;
+    text-align: right;
+}
+
+.right {
+    width: 100px;
+    margin-left: 10px;
+    float: left;
+}
+
+.pageheader {
+    text-decoration: underline;
+    margin-bottom: 30px;
+}
+
+.changed div {
+    color: blue;
+    background: lightyellow;
+}
+
+#add-order-button {
+    margin-bottom: 1.5em;
+}
+
+@media screen and (min-width: 320px) and (orientation: portrait)
+{
+    .alert-box {
+        width: 270px;
+    }
+}

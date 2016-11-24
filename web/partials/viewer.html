@@ -1,0 +1,71 @@
+<!--
+    File:           viewer.html
+    Author:         Milan Sobat
+    Last Updated:   Nov 17, 2014
+    Purpose:        Partial HTML for Purchase Order Viewer.
+-->
+
+<div class="container">
+    <div class="text-center">
+        <h2 class="pageheader">Purchase Order Viewer</h2>
+    </div>
+    <div class="panel-primary">
+        <div class="panel-body text-center">
+            <div class="form-group">
+                <label>Vendor No</label>
+                <select name="vendorno" ng-model="vendor.vendorno" ng-change="vendorChosen()"
+                        id="vendor-select" ng-options="v.vendorno as v.vendorno for v in vendors">
+                    <option value="choose">Choose</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label>PO</label>
+                <select name="pos" ng-model="ponum" ng-disabled="pickedVendor === false"
+                        ng-change="poChosen()" ng-options="po.PONumber as po.PONumber for po in purchaseorders">
+                    <option value="choose">Choose</option>
+                </select>
+            </div>
+            <div class="text-center alert-box notice"><span>{{status}}</span></div>
+            <div class="text-center" ng-hide="pickedPO === false">
+                <table class="table table-bordered">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="1" rowspan="1">Code</th>
+                            <th colspan="1" rowspan="1">Product</th>
+                            <th colspan="1" rowspan="1">Quantity</th>
+                            <th colspan="1" rowspan="1">Price</th>
+                            <th colspan="1" rowspan="1">Extended</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in items">
+                            <td align="left" style="padding-right: 15px">{{item.productcode}}</td>
+                            <td align="left" style="padding-right: 15px">{{item.productname}}</td>
+                            <td align="left">{{item.quantity}}</td>
+                            <td align="right">{{item.price}}</td>
+                            <td align="right">{{item.extended}}</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="4" align="right">Sub:</td>
+                            <td align="right">${{subTotal}}</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="4" align="right">Tax:</td>
+                            <td align="right">${{tax}}</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="4" align="right">Total:</td>
+                            <td align="right">${{total}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- prodTable -->
+            <div class="text-center">
+                <button id="view-order-button" class="btn btn-primary" href="/POPDF" ng-click="viewPDF()" ng-hide="pickedVendor === false">VIEW PDF</button>
+            </div>
+        </div>
+    </div>
+</div>

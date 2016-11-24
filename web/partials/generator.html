@@ -1,0 +1,88 @@
+<!--
+    File:           generator.html
+    Author:         Milan Sobat
+    Last Updated:   October 16, 2014
+    Purpose:        Partial HTML for Purchase Order Generator.
+-->
+
+<div class="container">
+    <div class="text-center">
+        <h2 class="pageheader">Purchase Order Generator</h2>
+    </div>
+    <div class="panel-primary">
+        <div class="generator-body">
+            <div class="panel-body text-center">
+                <div class="form-group">
+                    <label>Vendor No</label>
+                    <select name="vendorno" ng-model="vendor.vendorno" ng-change="vendorChosen()"
+                            id="vendor-select" ng-options="v.vendorno as v.vendorno for v in vendors">
+                        <option value="choose">Choose</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="product-label">Product</label>
+                    <select name="gen_product" ng-model="generator.product_code" ng-disabled="pickedVendor === false" ng-change="productChosen()"
+                            id="product-select" ng-options="p.productcode as p.productname for p in products">
+                        <option value="choose" disabled class="hide-option">Choose</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label id="quantity-label">Quantity</label>
+                    <select name="quantity" ng-model="quantity" ng-disabled="pickedProd === false"
+                            id="quantity-select" ng-change="quantityChosen()">
+                        <option value="choose" disabled class="hide-option">Choose</option>
+                        <option value="EOQ">EOQ</option>
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                    </select>
+                </div>
+            </div>
+            <div class="text-center">
+                <button id="add-order-button" class="btn btn-primary" ng-click="addToOrder()" ng-disabled="pickedQty === false">add</button>
+            </div>
+            <div class="text-center alert-box notice"><span>{{status}}</span></div>
+            <div class="text-center" ng-hide="prodTable === false">
+                <table class="table table-bordered">
+                    <thead class="header">
+                        <tr>
+                            <th colspan="1" rowspan="1">Product</th>
+                            <th colspan="1" rowspan="1">Quantity</th>
+                            <th colspan="1" rowspan="1">Extended</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr ng-repeat="item in items">
+                                <td align="left" style="padding-right: 15px">{{item.name}}</td>
+                                <td align="left">{{item.quantity}}</td>
+                                <td align="right">{{item.price}}</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2" align="right">Sub:</td>
+                            <td align="right">${{subTotal}}</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2" align="right">Tax:</td>
+                            <td align="right">${{tax}}</td>
+                        </tr>
+                        <tr>
+
+                            <td colspan="2" align="right">Total:</td>
+                            <td align="right">${{total}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div> <!-- prodTable -->
+            <div class="text-center">
+                <button id="add-order-button" class="btn btn-primary" ng-click="createPO()" ng-hide="generated === true" ng-disabled="pickedQty === false">ADD PO</button>
+                <button id="view-order-button" class="btn btn-primary" href="/POPDF" ng-click="viewPDF()" ng-hide="generated === false">VIEW PDF</button>
+            </div>
+        </div>
+
+    </div>
+</div>

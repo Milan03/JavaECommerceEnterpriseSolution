@@ -1,0 +1,105 @@
+<!--
+    File:           vendorModal.html
+    Author:         Milan Sobat
+    Last Updated:   October 16, 2014
+    Purpose:        Partial HTML for Vendor modal.
+-->
+
+
+<div class="col-xs-12 text-center">
+   <form name="vendorForm" novalidate>
+      <div class="panel panel-primary">
+         <div class="panel-heading xsmall">
+            <h4 class="modal-title" ng-hide="todo === 'add'">Vendor: {{vendor.vendorno}}</h4>
+            <h4 class="modal-title" ng-hide="todo === 'update'">Add New Vendor</h4> 
+            <h6>v2.0</h6>
+         </div>
+         <div class="panel-body">
+            <!-- NAME -->
+            <div class="form-group">
+               <label>Name</label>
+               <input type="text" ng-model="vendor.name" name="vendorname" required />
+               <div class="custom-error"  ng-show="vendorForm.vendorname.$pristine || 
+                                                   vendorForm.vendorname.$invalid">
+                    <span ng-show="vendorForm.vendorname.$error.required">Name is required</span>
+               </div>
+            </div>
+            <!-- EMAIL -->
+            <div class="form-group">
+               <label>Email</label>
+               <input type="email" ng-model="vendor.email" name="vendoremail" required />
+               <div class="custom-error"  ng-show="vendorForm.vendoremail.$pristine || 
+                                                   vendorForm.vendoremail.$invalid">
+                    <span ng-show="vendorForm.vendoremail.$error.required">Email is required</span>
+                    <span ng-show="vendorForm.verdoremail.$error.email">Invalid email format</span>
+               </div>
+            </div>
+            <!-- PHONE -->
+            <div class="form-group">
+               <label>Phone</label>
+               <input type="text" ng-model="vendor.phone" name="vendorphone" required />
+               <div class="custom-error"  ng-show="vendorForm.vendorphone.$pristine || 
+                                                   vendorForm.vendorphone.$invalid">
+                    <span ng-show="vendorForm.vendorphone.$error.required">Phone # is required</span>
+               </div>
+            </div>
+            <!-- ADDRESS -->
+            <div class="form-group">
+               <label>Street</label>
+               <input type="text" ng-model="vendor.address1" name="vendoraddress" required />
+               <div class="custom-error"  ng-show="vendorForm.vendoraddress.$pristine || 
+                                                   vendorForm.vendoraddress.$invalid">
+                    <span ng-show="vendorForm.vendoraddress.$error.required">Address is required</span>
+               </div>
+            </div>
+            <!-- CITY -->
+            <div class="form-group">
+               <label>City</label>
+               <input type="text" ng-model="vendor.city" name="vendorcity" required />
+               <div class="custom-error"  ng-show="vendorForm.vendorcity.$pristine || 
+                                                   vendorForm.vendorcity.$invalid">
+                    <span ng-show="vendorForm.vendorcity.$error.required">City is required</span>
+               </div>
+            </div>
+            <!-- POSTAL -->
+            <div class="form-group">
+               <label>Postal</label>
+               <input type="text" ng-model="vendor.postalcode" name="vendorpostal" ng-pattern="/^[A-Za-z]\d[A-Za-z][ -]?\d[A-Za-z]\d$/" required />
+               <div class="custom-error"  ng-show="vendorForm.vendorpostal.$pristine || 
+                                                   vendorForm.vendorpostal.$invalid">
+                    <span ng-show="vendorForm.vendorpostal.$error.required">Name is required</span>
+                    <span ng-show="vendorForm.vendorpostal.$error.pattern">Invalid format</span>
+               </div>
+            </div>
+            <!-- PROVINCE -->
+            <div class="form-group">
+               <label>Province</label>
+               <select ng-model="vendor.province" ng-init="vendor.province" class="input-small">
+                  <option value="Ontario">Ontario</option>
+                  <option value="Quebec">Quebec</option>
+                  <option value="Alberta">Alberta</option>
+               </select>    
+            </div>
+            <!-- VENDORTYPE -->
+            <div class="form-group">
+               <label>Type</label>
+               <select ng-model="vendor.vendortype" ng-init="vendor.vendortype" class="input-small">
+                  <option value="Trusted">Trusted</option>
+                  <option value="Unknown">Unknown</option>
+               </select>
+            </div>
+            <div>
+
+         </div>
+         <div class="panel-footer text-primary xsmall">      
+                <button class="btn btn-primary" ng-click="(todo==='add') ? addVendor() : updateVendor()"
+                                                ng-disabled="vendorForm.$invalid">{{todo}}</button>
+                <button class="btn btn-primary" ng-click="closeModal()">cancel</button>
+                <div ng-hide="todo==='add'">
+                    <button type="button" class="btn btn-primary" ng-click="deleteVendor()" confirm-click>delete</button>
+                </div>
+                <div>{{status}}</div>
+          </div>
+      </div>
+   </form>
+</div>

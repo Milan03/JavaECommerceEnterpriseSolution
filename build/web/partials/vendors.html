@@ -1,0 +1,28 @@
+<div class="container" ng-controller="VendorCtrl">
+    <div class="text-center">
+        <h2 class="pageheader">Vendors</h2>
+        <h4>v2.0</h4>
+    </div>
+    <div class="text-center alert-box notice"><span>{{status}}</span></div>
+    <table class="table table-bordered">
+        <thead class="header">
+            <tr>
+                <th colspan="1" rowspan="1">Num</th>
+                <th colspan="1" rowspan="1">Name</th>
+                <th colspan="1" rowspan="1">City</th>
+                <th colspan="1" rowspan="1">Type</th>
+            </tr>
+            <tr ng-click="selectRow(-1, null)">
+                <td align="center" colspan="4">-- Click to add new vendor, otherwise choose vendor to view --</td>
+            </tr>
+        </thead>
+        <tbody ng-repeat="vendor in vendors" class="{ itemSelected: $index === selectedRow }" ng-click="selectRow($index, vendor)">
+            <tr id="ven{{vendor.vendorno}}">
+                    <td align="left" style="padding-right: 15px">{{vendor.vendorno}}</td>
+                    <td align="left">{{vendor.name}}</td>
+                    <td align="left">{{vendor.city}}</td>
+                    <td align="left">{{vendor.vendortype}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>

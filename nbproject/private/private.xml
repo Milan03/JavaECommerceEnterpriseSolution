@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/RESTFactory.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/partials/vendors.html</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/css/casecss.css</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/servlets/POPDF.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/servlets/TestStatelessFundManagerServlet.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/dtos/VendorDTO.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/index.html</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/ProductCtrl.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/partials/viewer.html</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/app.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/partials/vendorModal.html</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/ViewerCtrl.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/directives.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/VendorModalCtrl.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/partials/addVendor.html</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/dtos/POLineItemDTO.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/org/netbeans/rest/application/config/ApplicationConfig.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/WEB-INF/web.xml</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/partials/home.html</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/servlets/QRCodeServlet.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/resources/POResource.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/servlets/QRCodeTestServlet.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/models/PurchaseOrderModel.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/dtos/PurchaseOrderDTO.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/VendorCtrl.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/partials/products.html</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/ProductModalCtrl.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/models/VendorModel.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/CustomerCtrl.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/servlets/TestVendorFacadeServlet.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/web/scripts/app/routes.js</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/servlets/PDFSampleServlet.java</file>
+            <file>file:/C:/Users/Milan/SkyDrive/School/Semester%2006/Java%20Client%20Server/Case2/Case2/Case2-war/src/java/dtos/ProductDTO.java</file>
+        </group>
+    </open-files>
+</project-private>
